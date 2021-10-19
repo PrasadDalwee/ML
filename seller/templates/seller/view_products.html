@@ -1,0 +1,12 @@
+{% extends 'seller/main.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for product in products %}
+<h5>
+    {{product.product.name}}
+    
+{% endfor %}
+
+{% endblock content %}

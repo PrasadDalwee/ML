@@ -1,0 +1,58 @@
+{% load static %}
+
+    {% block content %}
+    <section style="height:80px;"></section>
+
+    <!----------- Footer ------------>
+    <footer class="footer-bs">
+        <div class="row">
+        	<div class="col-md-3 footer-brand animated fadeInLeft">
+                <h1><img src="{% static 'images/logo.png' %}" alt=""></h1>
+                <h1>
+                    क्रेता देवो भव
+                </h1>
+               
+              
+                <p>© 2020  All rights reserved</p>
+            </div>
+        	<div class="col-md-4 footer-nav animated fadeInUp">
+            	<h4>Our Partners —</h4>
+            	<div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Nike</a></li>
+                        <li><a href="#">Sony</a></li>
+                        <li><a href="#">Asus</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">Tata</a></li>
+                    </ul>
+                </div>
+            	<div class="col-md-6">
+                    <ul class="list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        	<div class="col-md-2 footer-social animated fadeInDown">
+            	<h4>Follow Us</h4>
+            	<ul>
+                	<li><a href="#">Facebook</a></li>
+                	<li><a href="#">Twitter</a></li>
+                	<li><a href="#">Instagram</a></li>
+                	<li><a href="#">RSS</a></li>
+                </ul>
+            </div>
+        	<div class="col-md-3 footer-ns animated fadeInRight">
+            	<h4>Sell with us</h4>
+                <p>A seller freindly site which takes care of all of its sellers and provides best services and perks to all</p>
+                <p>
+
+<a href="{% url 'dashboard' %}">Be a Seller</a> 
+               
+                 </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock content %}

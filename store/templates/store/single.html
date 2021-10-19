@@ -1,0 +1,233 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="header-top">
+                  
+                   
+        
+        <div class="head-bread">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'store' %}">Home</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="showcase-grid">
+            <div class="container">
+                <div class="col-md-8 showcase">
+                    <div class="flexslider">
+                          <ul class="slides">
+                            <li data-thumb="{{product.imageURL1}}">
+                                <div class="thumb-image"> <img src="{{product.imageURL1}}"  class="img-responsive"> </div>
+                            </li>
+                            <li data-thumb="{{product.imageURL1}}">
+                                 <div class="thumb-image"> <img src="{{product.imageURL1}}"  class="img-responsive"> </div>
+                            </li>
+                            <li data-thumb="{{product.imageURL1}}">
+                               <div class="thumb-image"> <img src="{{product.imageURL1}}"  class="img-responsive"> </div>
+                            </li>
+                            <li data-thumb="{{product.imageURL1}}">
+                               <div class="thumb-image"> <img src="{{product.imageURL1}}"  class="img-responsive"> </div>
+                            </li>
+                          </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 showcase">
+                    <div class="showcase-rt-top">
+                        <div class="pull-left shoe-name">
+                            <h3>{{product.name}}     {{product.id}}</h3>
+                            {% if product.brand %}
+                            <p>{{product.brand}}</p>
+                            {% endif %}
+                            <h4>₹ {{product.price|floatformat:2}}</h4>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                        </div>
+                        <ul>
+                            <li class="ad-2-crt simpleCart_shelfItem">
+                                <a class="btn item_add" href="#" role="button">Add To Cart</a>
+                                <a class="btn" href="#" role="button">Buy Now</a>
+                            </li>
+                        </ul>
+                    </div>
+                  
+                    <div class="showcase-last">
+                        <h3>product details</h3>
+                       {% if product.description %}
+                        {{product.description}}
+                        {% endif %}
+
+                    </div>
+                </div>
+        <div class="clearfix"></div>
+            </div>
+        </div>
+        
+        <div class="specifications">
+            <div class="container">
+              <h3>Item Details</h3> 
+                <div class="detai-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills tab-nike" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Highlights</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Description</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Terms & conditiona</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                    <p>{{product.name }}</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                    <p> {{product.name}} </p>    
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        The images represent actual product though color of the image and product may slightly differ.    
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="you-might-like">
+            <div class="container">
+                <h3 class="you-might">Products You May Like</h3>
+                {% for p in other_products %}
+
+                <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                     <!-- normal -->
+                        <div class="ih-item square effect3 bottom_to_top">
+                            <div class="bottom-2-top">
+                    <div class="img"><img src="{{p.imageURL1}}" alt="/" class="img-responsive gri-wid"></div>
+                            <div class="info">
+                                <div class="pull-left styl-hdn">
+                                    <h3>{{p.name}}  {{p.id}}</h3>
+                                </div>
+                                <div class="pull-right styl-price">
+                                    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">₹ {{p.price|floatformat:2}}</span></a></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div></div>
+                        </div>
+                    <!-- end normal -->
+                    <div class="quick-view">
+                        <a href="{% url 'product_detail' p.id %}">Quick view</a>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+                <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                    <!-- normal -->
+                        <div class="ih-item square effect3 bottom_to_top">
+                            <div class="bottom-2-top">
+                    <div class="img"><img src="images/grid6.jpg" alt="/" class="img-responsive gri-wid"></div>
+                            <div class="info">
+                                <div class="pull-left styl-hdn">
+                                    <h3>style 01</h3>
+                                </div>
+                                <div class="pull-right styl-price">
+    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div></div>
+                        </div>
+                    <!-- end normal -->
+                    <div class="quick-view">
+                        <a href="single.html">Quick view</a>
+                    </div>
+                </div>
+                <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                    <!-- normal -->
+                        <div class="ih-item square effect3 bottom_to_top">
+                            <div class="bottom-2-top">
+                    <div class="img"><img src="images/grid3.jpg" alt="/" class="img-responsive gri-wid"></div>
+                            <div class="info">
+                                <div class="pull-left styl-hdn">
+                                    <h3>style 01</h3>
+                                </div>
+                                <div class="pull-right styl-price">
+    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div></div>
+                        </div>
+                    <!-- end normal -->
+                    <div class="quick-view">
+                        <a href="single.html">Quick view</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        
+        <div class="footer-grid">
+            <div class="container">
+                <div class="col-md-2 re-ft-grd">
+                    <h3>Categories</h3>
+                    <ul class="categories">
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Kids</a></li>
+                        <li><a href="#">Formal</a></li>
+                        <li><a href="#">Casuals</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 re-ft-grd">
+                    <h3>Short links</h3>
+                    <ul class="shot-links">
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a href="contact.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 re-ft-grd">
+                    <h3>Social</h3>
+                    <ul class="social">
+                        <li><a href="#" class="fb">facebook</a></li>
+                        <li><a href="#" class="twt">twitter</a></li>
+                        <li><a href="#" class="gpls">g+ plus</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <div class="col-md-2 re-ft-grd">
+                    <div class="bt-logo">
+                        <div class="logo">
+                            <a href="index.html" class="ft-log">N-AIR</a>
+                        </div>
+                    </div>
+                </div>
+        <div class="clearfix"></div>
+            </div>
+            <div class="copy-rt">
+                <div class="container">
+            <p>&copy;   2021 Krayah All Rights Reserved. </p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+{% endblock content %}

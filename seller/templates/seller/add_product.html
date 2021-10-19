@@ -1,0 +1,23 @@
+{% extends 'seller/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>
+    Add Product
+</h1>
+<form method="POST" enctype="multipart/form-data" > 
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name " >
+    <input type="number" name="price" placeholder="Price">
+    <input type="number" name="quantity" placeholder="Quantity">
+    Is it digital
+    <input type="checkbox" name="digital" placeholder="" > 
+    <input type="text" name="note" placeholder="descrption">
+    add image
+    <input type="file" name="image" accept="image/*" id="id_image">
+    <button type="Submit" > Submit</button>
+
+</form>
+
+{% endblock  %}

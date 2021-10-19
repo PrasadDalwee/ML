@@ -1,0 +1,92 @@
+{% extends 'seller/main.html' %}
+{% load static %}
+
+{% block content %}
+					<!-- OVERVIEW -->
+					<div class="panel panel-headline">
+						<div class="panel-heading">
+							<h3 class="panel-title">Weekly Overview</h3>
+							<p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-download"></i></span>
+										<p>
+											<span class="number">15</span>
+											<span class="title">Products in cart</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-shopping-bag"></i></span>
+										<p>
+											<span class="number">{{analysis.no_of_sale}}</span>
+											<span class="title">Sales</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-eye"></i></span>
+										<p>
+											<span class="number">{{analysis.no_of_visits}}</span>
+											<span class="title">Visits</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-bar-chart"></i></span>
+										<p>
+											<span class="number">{{analysis.view_to_sale}} %</span>
+											<span class="title">Conversions</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-9">
+									<div id="headline-chart" class="ct-chart"></div>
+								</div>
+								<div class="col-md-3">
+									<div class="weekly-summary text-right">
+										<span class="number">₹ {{analysis.total_revenue}}</span>
+										<span class="info-label">Total Sales</span>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- VISIT CHART -->
+					<div class="panel">
+						<div class="panel-heading">
+						  <h3 class="panel-title">Website Visits</h3>
+						  <div class="right">
+							<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+							<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+						  </div>
+						</div>
+						<div class="panel-body">
+						  <div id="visits-chart" class="ct-chart"></div>
+						</div>
+					  </div>
+					
+
+					<!-- END OVERVIEW -->
+					
+
+					<canvas id="myChart"></canvas>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+		<footer>
+			<div class="container-fluid">
+				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+	{% endblock content %}

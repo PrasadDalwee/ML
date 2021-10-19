@@ -1,0 +1,92 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="fullscreen-bg">
+
+<head>
+	<title>Register as seller
+    </title>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="{% static 'css/assets/vendor/bootstrap/css/bootstrap.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/assets/vendor/font-awesome/css/font-awesome.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/assets/vendor/linearicons/style.css'%}">
+	<link rel="stylesheet" href="{% static 'css/assets/vendor/chartist/css/chartist-custom.css'%}">
+    <!-- MAIN CSS -->
+    
+	<link rel="stylesheet" href="{% static 'css/assets/css/main.css'%}">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'css/assets/img/apple-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'css/assets/img/favicon.png'%}">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+
+</head>
+
+<body>
+ 
+    
+    <section class="testimonial py-5" id="testimonial">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                    <div class=" ">
+                        <div class="card-body">
+                            <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                            <h2 class="py-3">Registration</h2>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 py-5 border">
+                    <h4 class="pb-4">Please fill with your details</h4>
+                    <form>
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="email" class="form-control" id="inputEmail4" 
+                              name="email"
+                              placeholder="Email">
+                            </div>
+                          </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input id="Mobile No." name="phone" placeholder="Phone No." class="form-control" required="required" type="text">
+                            </div>
+                            <div class="form-group col-md-6">
+                                      
+                    
+                            </div>
+                            <div class="form-group col-md-12">
+                                      <textarea id="comment" name="office_address" cols="40" rows="5" class="form-control"
+                                      placeholder="Office Address"
+                                      ></textarea>
+                            </div>
+                        </div>
+                    
+                        
+                        <div class="form-row">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                    <p>
+                        <a href="{% url 'dashboard_customer' %}"> Back to site</a>
+                    </p>
+                </div> 
+            </div>
+        </div>
+    </section>
+    <hr >
+</body>
+
+</html>

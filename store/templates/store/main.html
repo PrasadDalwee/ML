@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+<head>
+  <title>D</title>
+  <meta charset="UTF-8">
+  <meta name="description" content=" Divisima | eCommerce Template">
+  <meta name="keywords" content="divisima, eCommerce, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="shortcut icon"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+  <!---
+    for product page 
+  -->
+  <!--fonts-->
+        <!--bootstrap-->
+    
+        <!--fonts-->
+        <!--bootstrap-->
+    
+        <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <!--coustom css-->
+            <link rel="stylesheet" href="{% static 'web/css/style.css' %}" rel="stylesheet" type="text/css"/>
+        <!--shop-kart-js-->
+        <script src="{% static 'web/js/simpleCart.min.js' %}"></script>
+        <!--default-js-->
+            <script src="{% static 'web/js/jquery-2.1.4.min.js' %}"></script>
+        <!--bootstrap-js-->
+            <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+        <!--script-->
+         <!-- FlexSlider -->
+            <script src="{% static 'web/js/imagezoom.js' %}"></script>
+              <script defer src="{% static 'web/js/jquery.flexslider.js' %}"></script>
+            <link rel="stylesheet" href="{% static 'web/css/flexslider.css' %}" type="text/css" />
+
+            <script>
+            // Can also be used with $(document).ready()
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+              });
+            });
+            </script>
+
+
+  <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href='//fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+		
+
+        <!--fonts-->
+        <!--bootstrap-->
+    
+        <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css" rel="stylesheet'}" type="text/css">
+        <!--coustom css-->
+            <link rel="stylesheet" href="{% static 'web/css/style.css" rel="stylesheet'}" type="text/css"/>
+        <!--shop-kart-js-->
+        <script src="{% static 'web/js/simpleCart.min.js'}"></script>
+        <!--default-js-->
+            <script src="{% static 'web/js/jquery-2.1.4.min.js'}"></script>
+        <!--bootstrap-js-->
+            <script src="{% static 'web/js/bootstrap.min.js'}"></script>
+        <!--script-->
+         <!-- FlexSlider -->
+            <script src="{% static 'web/js/imagezoom.js'}"></script>
+              <script defer src="{% static 'web/js/jquery.flexslider.js'}"></script>
+            <link rel="stylesheet" href="{% static 'web/css/flexslider.css'}" type="text/css" media="screen" />
+
+            <script>
+            // Can also be used with $(document).ready()
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+              });
+            });
+            </script>
+
+
+
+
+ // <!---  end of the product page css-->
+
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'css/customer/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/font-awesome.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/flaticon.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/slicknav.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/jquery-ui.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/owl.carousel.min.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/animate.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/customer/style.css' %}"/>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+    <script type="text/javascript">
+      var user = '{{request.user}}'
+      
+            function getToken(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let i = 0; i < cookies.length; i++) {
+                  const cookie = cookies[i].trim();
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+      var csrftoken = getToken('csrftoken');
+
+      function getCookie(name) {
+        // Split cookie string and get all individual name=value pairs in an array
+        var cookieArr = document.cookie.split(";");
+
+        // Loop through the array elements
+        for(var i = 0; i < cookieArr.length; i++) {
+            var cookiePair = cookieArr[i].split("=");
+
+            /* Removing whitespace at the beginning of the cookie name
+            and compare it with the given string */
+            if(name == cookiePair[0].trim()) {
+                // Decode the cookie value and return
+                return decodeURIComponent(cookiePair[1]);
+            }
+        }
+
+        // Return null if not found
+        return null;
+    }
+    var cart = JSON.parse(getCookie('cart'))
+
+    if (cart == undefined){
+      cart = {}
+      console.log('Cart Created!', cart)
+      document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+    }
+    console.log('Cart:', cart)
+  
+
+
+    </script>
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 text-center text-lg-left">
+						<!-- logo -->
+						<a href="./index.html" class="site-logo">
+							<img src="img/logo.png" alt="">
+						</a>
+					</div>
+					<div class="col-xl-6 col-lg-5">
+						<form  method="POST" class="header-search-form">
+              {% csrf_token %}
+							<input type="text" name="tag" placeholder="Search on Krayah ....">
+							<button class="btn btn-search" , type="submit"><i class="flaticon-search"></i></button>
+						</form>
+					</div>
+					<div class="col-xl-4 col-lg-5">
+						<div class="user-panel">
+							<div class="up-item">
+                <i class="flaticon-profile"></i>
+                {% if not user.is_authenticated %}
+                <a href="{% url 'login_user' %}">Sign</a> In or <a href="#">Create Account</a>
+                {% else %}
+                <span>
+                  Welcome {{user.username}}
+                </span>
+                {% endif %}
+
+							</div>
+							<div class="up-item">
+								<div class="shopping-card">
+                  
+                <a href="{% url 'cart' %}"> <i class="flaticon-bag"></i> </a>
+                  
+                  <span>
+                    
+									<strong class="cart-quantity">{{cartItems}}
+                  </strong>
+                  </span>
+                  
+                </div>
+                
+                
+                
+                <div class="up-item mx-0">
+                  
+                    <span>
+                      
+                    
+                      <a href="{% url 'logout_user' %}">   logout</a>
+                   
+                    </span>
+                    
+                  
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="main-navbar">
+			<div class="container">
+				<!-- menu -->
+				<ul class="main-menu">
+					<li><a href="{% url 'dashboard_customer' %}">Home</a></li>
+					<li><a href="#">Women</a></li>
+					<li><a href="#">Men</a></li>
+					<li><a href="#">Jewelry
+						<span class="new">New</span>
+					</a></li>
+					<li><a href="#">Shoes</a>
+						<ul class="sub-menu">
+							<li><a href="#">Sneakers</a></li>
+							<li><a href="#">Sandals</a></li>
+							<li><a href="#">Formal Shoes</a></li>
+							<li><a href="#">Boots</a></li>
+							<li><a href="#">Flip Flops</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Pages</a>
+						<ul class="sub-menu">
+							<li><a href="./product.html">Product Page</a></li>
+							<li><a href="./category.html">Category Page</a></li>
+							<li><a href="./cart.html">Cart Page</a></li>
+							<li><a href="./checkout.html">Checkout Page</a></li>
+							<li><a href="./contact.html">Contact Page</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Blog</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- Header section end -->
+<div >
+
+  {% block content %}
+
+  {% endblock content %}
+</div>
+  
+
+  {% include 'store/footer.html' %}
+
+
+  <!--====== Javascripts & Jquery ======-->
+  <script src="{% static 'js/customer/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'js/customer/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/customer/jquery.slicknav.min.js' %}"></script>
+  <script src="{% static 'js/customer/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/customer/jquery.nicescroll.min.js' %}"></script>
+  <script src="{% static 'js/customer/jquery.zoom.min.js' %}"></script>
+  <script src="{% static 'js/customer/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'js/customer/main.js' %}"></script>
+
+
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
+
+
+
+
+  </body>
+</html>
